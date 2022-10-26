@@ -1,7 +1,8 @@
 #!/bin/bash -x
+timeout=$TIMEOUT
 
 apt-get -y install curl  
-timeout=2 
+
 x=1 
 while [ $x -le $timeout ] 
 do 

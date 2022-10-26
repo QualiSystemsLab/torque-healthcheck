@@ -7,7 +7,8 @@ resource "null_resource" "healthcheck" {
     interpreter = ["/bin/bash", "-c"]
 
     environment = {
-      URL           = var.URL
+      URL     = var.URL,
+      TIMEOUT = var.TIMEOUT
     }
   }
 }

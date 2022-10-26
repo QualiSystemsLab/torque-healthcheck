@@ -5,7 +5,10 @@ inputs:
   URL:
     type: string
     display-style: normal
-    default: "http://frontend-linux-app-vvpjrf7csk9y.azurewebsites.net/"
+  TIMEOUT:
+    type: number
+    display-style: normal
+    default: 2
   execution_host:
     type: execution-host
     # default: eks-torque
@@ -23,5 +26,5 @@ grains:
         compute-service: '{{.inputs.execution_host}}'
         # service-account: sa-eks-torque
       inputs:
-        - SANDBOX_ID: '{{ sandboxid | downcase }}'
+        - TIMEOUT: '{{.inputs.TIMEOUT}}'
         - URL: '{{.inputs.URL}}'
