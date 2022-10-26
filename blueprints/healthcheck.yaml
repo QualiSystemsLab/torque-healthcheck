@@ -6,7 +6,6 @@ inputs:
     type: string
     display-style: normal
   TIMEOUT:
-    type: number
     display-style: normal
     default: 2
   execution_host:
