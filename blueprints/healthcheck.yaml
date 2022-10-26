@@ -8,6 +8,7 @@ inputs:
   TIMEOUT:
     display-style: normal
     default: 2
+    description: "Please input timeout in sec."
   execution_host:
     type: execution-host
     # default: eks-torque
