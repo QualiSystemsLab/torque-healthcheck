@@ -1,0 +1,27 @@
+spec_version: 2
+description: Blueprint that deploying and onboarding EKS cluster
+
+inputs:
+  URL:
+    type: string
+    display-style: normal
+    default: "http://frontend-linux-app-vvpjrf7csk9y.azurewebsites.net/"
+  execution_host:
+    type: execution-host
+    # default: eks-torque
+
+
+grains:
+  # healthcheck
+  healthcheck:
+    kind: terraform
+    spec:
+      source:
+        store: healthcheck-test
+        path: terraform/healthcheck
+      host:
+        compute-service: '{{.inputs.execution_host}}'
+        # service-account: sa-eks-torque
+      inputs:
+        - SANDBOX_ID: '{{ sandboxid | downcase }}'
+        - URL: '{{.inputs.URL}}'
