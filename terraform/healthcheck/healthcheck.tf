@@ -3,7 +3,7 @@
 resource "null_resource" "healthcheck" {
   provisioner "local-exec" {
     on_failure  = fail
-    command     = "chmod +x ./scripts/torque_onboard.sh && timeout 10m ./scripts/torque_onboard.sh"
+    command     = "chmod +x ./scripts/healthcheck.sh && timeout 10m ./scripts/healthcheck.sh"
     interpreter = ["/bin/bash", "-c"]
 
     environment = {
