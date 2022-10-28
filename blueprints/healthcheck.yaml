@@ -20,7 +20,7 @@ grains:
     kind: terraform
     spec:
       source:
-        store: healthcheck-test
+        store: torque-healthcheck
         path: terraform/healthcheck
       host:
         compute-service: '{{.inputs.execution_host}}'
